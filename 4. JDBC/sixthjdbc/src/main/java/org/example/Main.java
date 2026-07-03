@@ -25,7 +25,7 @@ public class Main {
 //        establish connectionś
 
 //            connection ke liye ab seedha util se utha lo
-            connect = jdbcUtil.conn();
+            connect = jdbcUtil.connectionBanao();
 
 //        create the statement
             stmt = connect.createStatement();
