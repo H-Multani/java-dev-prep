@@ -1,5 +1,44 @@
 <html>
+<head>
+    <title>
+        4th web application
+    </title>
+</head>
 <body>
-<h2>Hello World!</h2>
+here we will make a basic form and take input from user and login the user and display like welcome user type shiii
+
+
+<form method="post" action="./fourthservlet">
+    <table>
+        <tr>
+            <td>
+
+                user name
+            </td>
+            <td>
+                <input type="text" name="uname">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                user city
+            </td>
+            <td>
+                <input type="text" name="ucity">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                user city
+            </td>
+            <td>
+                <input type="submit" value="signup">
+            </td>
+        </tr>
+    </table>
+</form>
+
+
 </body>
 </html>

@@ -16,40 +16,45 @@ import java.io.PrintWriter;
 
 
 // /firstservlet wala part must match exactly as the one in index.html
-@WebServlet("/firstservlet")
+@WebServlet("/fourthservlet")
 public class dostuff extends HttpServlet {
-
-    //    here we will learn about servlet life cycle
-//    sabse pehle chalega static block
-    static {
-        System.out.println("Servlet is loaded ........");
-    }
-
-    public dostuff(){
-        // we here means servlet ka object bana hai
-        System.out.println("Servlet object is created");
-    }
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-
-//        ab servlet initialize hoga
-        System.out.println("Servlet initialized...");
-    }
-
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        kuch bhi service ke liye yahi funcn chalega
-        System.out.println("service method to handle HTTP request and return response");
-    }
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        System.out.println("control in servlet");
+////        since we are getting data from user we use ree and store the data in some variables
+//        String name=req.getParameter("uname");
+//        String city=req.getParameter("ucity");
+//
+////        lets put basic check here
+//        if(name.equals("harsh") && city.equals("pune")){
+////            sout karoge toh terminal me dikhega
+//            System.out.println("success, the right harsh logged in");
+//        }
+//        else{
+//            System.out.println("different harsh logged in");
+//        }
+//    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    }
+        System.out.println("control in servlet");
+//        since we are getting data from user we use ree and store the data in some variables
+        String name=req.getParameter("uname");
+        String city=req.getParameter("ucity");
 
-    @Override
-    public void destroy() {
-        System.out.println("obect destroyed");
+//        lets put basic check here
+//        if(name.equals("harsh") && city.equals("pune")){
+//           sout karoge toh terminal me dikhega
+//            System.out.println("success, the right harsh logged in");
+//        }
+//        else{
+//            System.out.println("different harsh logged in");
 
+
+//        ab we know that the actual response has to go to user too, toh the respnse has to go to another HTML file, since servlet is just controller
+
+//        for that we use sendRedirect(), this will send the control back to the file we specify, here we send control back to success.jsp
+        resp.sendRedirect("/servlet04/success.jsp");
+
+        }
     }
-}
