@@ -37,7 +37,7 @@ public class AlienResources {
 //    ki id se nikalna hai data , and alag se nai bhejra seedha link me bhejra data
 //    first of all we know ki GET req me hi data travels through the link toh yaha ek GET req banani padegi itna pata
 
-//    ab normal GET likhenge toh dikkat hogi since we now have 2 methods with GET
+//    ab normal GET likhenge toh dikkat hogi since we now have 2 methods with GET, toh isko apan path denge
     @GET
     @Path("/send1data/{id}")
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})

@@ -1,0 +1,7 @@
+jersey webapp archetype
+
+GroupId: org.glassfish.jersey.archetypes
+
+ArtifactId: jersey-quickstart-webapp
+
+Version: 3.1.9
