@@ -1,0 +1,23 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+<!--        property bana do, name apne se de dena, driver bata do-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+<!--        url dedo POSTGRES ka, agar sql use karre toh postgres ke jagah mysql kardena,
+5432 is port no of postgres, mydb is database ka name -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/mydb</property>
+<!--        port ke liye goto pgadmin>server>postgresql 18>(rt click) properties>connection -->
+        
+<!--        username bata do-->
+        <property name="hibernate.connection.username">postgres</property>
+<!--        passwd dedo-->
+        <property name="hibernate.connection.password">Har@123</property>
+
+<!--        if we want ki apne se table create karde then we need to define here-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+<!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
+
+        
+<!--        to see the query being run we write-->
+        <property name="hibernate.show_sql">true</property>
+    </session-factory>
+</hibernate-configuration>
