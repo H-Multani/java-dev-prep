@@ -1,0 +1,47 @@
+
+<!--we use beans tag for different classes-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+<!--    konse class ka bean banana hai, normal class name will not work we need qualified name-->
+<!--    id bhi de sakte hai, that id will be used directly inside getBean(here)-->
+
+<!--    jitni classes ka bean banaoge utne ke hi objects baneneg bas-->
+    <bean id="dev" class="org.example.dev">
+<!--        ab dev wali class ke andar agar kisi variable/property ko change karna /value deni hai toh we do-->
+
+<!--        here we are giving vlue 18 to property 'age' -->
+<!--        this is setter injection-->
+<!--        <property name="age" value="18"></property>-->
+
+<!--        ab agar we want ko give value using constructor -->
+<!--        this is constructor injection-->
+<!--        <constructor-arg value="14" />-->
+<!--        yaha name nai diya since ek hi property dere constructor me, name wala scene hai laga sakte if needed-->
+<!--        if we have multiple, we can use indexes -->
+<!--        <constructor-arg index="0" value="14" />-->
+
+
+<!--        if we want to initialize object of a class use property again-->
+<!--        yaha we have to initialize laptop variable inside dev class, lekin uska normal value nai de sakte since object hai-->
+<!--        hence we use ref-->
+<!--        we already have laptop ka object by id->lap1, vahi object laga do-->
+<!--        <property name="laptop" ref="lap1"></property>-->
+
+<!--        for constructor injection of same-->
+        <constructor-arg ref="lap1" />
+
+    </bean>
+
+    <bean id="lap1" class="org.example.laptop">
+    </bean>
+
+
+<!--    <bean id="dev1" class="org.example.dev">-->
+<!--        ye property change sirf dev wale object ke liye hai, dev1 ke liye chahiye toh dev1 ke andar likho-->
+<!--    </bean>-->
+</beans>
