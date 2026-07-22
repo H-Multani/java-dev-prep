@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dev" class="org.example.dev" autowire="byType">
+<!--        object banane ke liye preperty laga lo, setter hai already toh kaam karrega-->
+
+<!--        now we need object of computer comp, which is an interface toh we go to implemetation of this interface-->
+<!--        we have 2 implementations desktop and laptop, neeche laptop ka object bana hai lap1 naam se vahi daal do use karlo-->
+<!--        man hai toh desk1 bhi use kar sakte hai-->
+<!--        <property name="comp" ref="comp" />-->
+<!--        name is same as ref, isko automatic karne ke liye we use autowire-->
+
+    </bean>
+
+<!--    laptop ka object bana do-->
+    <bean id="comp" class="org.example.laptop" primary="true">
+    </bean>
+
+<!--    desktop ka object bana do-->
+    <bean id="desk1" class="org.example.desktop">
+    </bean>
+</beans>
