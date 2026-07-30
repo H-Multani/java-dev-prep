@@ -146,5 +146,21 @@ public class productController {
         }
     }
 
+//    searching ke liye , navbar.jsx, line no 88 par dekhoge toh we have
+//    ${baseUrl}/api/products/search?keyword=${input}`, ie iss path se searching karni hai, banano funcn
+//    and since its a get() hence we make get request
+    @GetMapping("/products/search")
+    public ResponseEntity<List<product>> searchProducts(@RequestParam String keyword){
+        System.out.println("searching with "+keyword);
+//        service se bolo products nikal kar de
+        List<product> prod=service.searchProducts(keyword);
+
+        System.out.println("Found " + prod.size() + " products");
+
+//        ab return kardo products jo aaye h
+        return new ResponseEntity<>(prod,HttpStatus.OK);
+
+    }
+
 
 }

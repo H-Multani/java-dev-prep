@@ -60,4 +60,9 @@ public class productService {
     public void deleteProduct(int id) {
         repo.deleteById(id);
     }
+
+    public List<product> searchProducts(String keyword) {
+//        repo se bolo ki data nikal kar de
+        return repo.searchProducts(keyword);
+    }
 }
