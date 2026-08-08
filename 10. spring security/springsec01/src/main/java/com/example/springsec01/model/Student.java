@@ -1,4 +1,4 @@
-package com.example.springsec01;
+package com.example.springsec01.model;
 
 public class Student {
     private int id;

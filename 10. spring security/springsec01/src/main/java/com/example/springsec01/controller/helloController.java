@@ -1,7 +1,6 @@
-package com.example.springsec01;
+package com.example.springsec01.controller;
 
 
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
