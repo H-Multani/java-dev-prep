@@ -16,7 +16,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password4j.BcryptPassword4jPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -132,7 +134,14 @@ public class securityConfig {
         DaoAuthenticationProvider provider=new DaoAuthenticationProvider(userDetailService);
 
 //        for now i dont want password encoder, for that i do
-        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+//        provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+
+//        ab apan ne password save karte time encoding ki hai using bcrypt, toh yaha ab decode karna padega, check karne ke time
+//        yaha bhi same encoder laga denga,
+//        then if password is correct, then DB wala passwd will be same as this entered wala password since same passwd will have same encoding
+//        here since apan ne 12 strength ka encoder use kiya hai toh object bhej denge bas bcrpt wale encoder ka with strength
+//        ezpz
+        provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
 
 //        apan apna custom userDetailServide use karenge
 //        this func has been depricated hence nai chalega,
