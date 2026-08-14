@@ -45,7 +45,8 @@ public class userService {
 //        verify if this user is real
         if(auth.isAuthenticated())
 //            success bhejne ke jagah, we need token aaye, toh JWT service class ke object se lelo vo funcn
-            return jwTservice.generateToken();
+//            username bhej dena
+            return jwTservice.generateToken(user.getUsername());
         return "fail";
     }
 }
